@@ -34,9 +34,9 @@ if [ ! -d "day-$DAY" ]; then
 fi
 
 echo "Getting input source file:"
-curl -b session="$SESSION" "https://adventofcode.com/2020/day/$DAY/input" -o "day-$DAY/input.txt"
+curl -b session="$SESSION" "https://adventofcode.com/2021/day/$DAY/input" -o "day-$DAY/input.txt"
 
 echo "Fetching problem description..."
-pandoc -f html -t markdown "https://adventofcode.com/2020/day/$DAY" -o "day-$DAY/problem.md"
+pandoc -f html -t markdown "https://adventofcode.com/2021/day/$DAY" -o "day-$DAY/problem.md"
 
 exit 0
