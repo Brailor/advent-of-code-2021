@@ -1,5 +1,4 @@
 module one
-open System
 open System.IO
 
 
@@ -9,24 +8,22 @@ let readLines (filePath:string) = seq {
         yield sr.ReadLine () |> int
 }
 
-let depths = readLines "one/input.txt"
-let problem1 = 
-    // let depths = seq [1; 2; 3; 4; 5;]
-    let mutable counter = 0
-    depths |> Seq.windowed 2 |> Seq.iter (fun (elems) ->
-        if elems.[0] < elems.[1] then
-            counter <- counter + 1
+let problem1 depths = 
+    (0, depths |> Seq.windowed 2) ||> Seq.fold (fun (inc_count) depth ->
+        match depth with
+        | [| int1; int2; |] -> if int1 < int2 then (inc_count + 1) else (inc_count)
+        | _ -> (inc_count)
     )
 
-    printf "%A" counter    
-
-let problem2 =
-    let mutable counter = 0
-
-    let res = depths |> Seq.windowed 3 |> Seq.map (fun (elems) ->
-        Array.sum elems) |> Seq.windowed 2 |> Seq.iter (fun (elems) ->
-        if elems.[0] < elems.[1] then
-            counter <- counter + 1
-    )  
-    printf "%A" counter
+let problem2 depths =
+    let (count, _) = ((-1,0), depths |> Seq.windowed 3) ||> Seq.fold (fun (inc_count, prev_sum) depth -> 
+        match depth with 
+        | [|int1; int2; int3;|] ->
+            let new_sum = int1 + int2 + int3
+            match new_sum > prev_sum with
+            | true -> (inc_count + 1, new_sum)
+            | _ -> (inc_count, new_sum)
+        | _ -> (inc_count, prev_sum)
+    )
+    count
 
