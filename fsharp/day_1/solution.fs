@@ -1,4 +1,4 @@
-module one
+module day_1 
 open System.IO
 
 
