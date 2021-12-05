@@ -17,7 +17,7 @@ if [ -z "$DAY" ]; then
     exit 1
 fi
 
-if [ ! -d "day-$DAY" ]; then
+if [ ! -d "day_$DAY" ]; then
     echo "Solution directory for day: $DAY not found."
     while read -rp "Would you like to create it? [y/n]" answer; do
         if [ "$answer" = "n" ]; then
@@ -27,16 +27,16 @@ if [ ! -d "day-$DAY" ]; then
 
         if [[ "$answer" =~ y|Y ]]; then
             echo "Creating directory..."
-            mkdir -p "day-$DAY"
+            mkdir -p "day_$DAY"
             break
         fi
     done
 fi
 
 echo "Getting input source file:"
-curl -b session="$SESSION" "https://adventofcode.com/2021/day/$DAY/input" -o "day-$DAY/input.txt"
+curl -b session="$SESSION" "https://adventofcode.com/2021/day/$DAY/input" -o "day_$DAY/input.txt"
 
 echo "Fetching problem description..."
-pandoc -f html -t markdown "https://adventofcode.com/2021/day/$DAY" -o "day-$DAY/problem.md"
+pandoc -f html -t markdown "https://adventofcode.com/2021/day/$DAY" -o "day_$DAY/problem.md"
 
 exit 0

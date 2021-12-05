@@ -4,6 +4,8 @@
 open day_1
 open day_2
 open day_3
+open day_4
+open day_5
 open System
 
 [<EntryPoint>]
@@ -19,6 +21,6 @@ let main argv =
 
     // printfn "day - 2: \n problem - 1: %A \n problem - 2: %A" d21 d22
 
-    let a = day_3.problem1
+    let a = day_5.problem1
 
     0 // return an integer exit code
