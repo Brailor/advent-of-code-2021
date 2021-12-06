@@ -1,7 +1,7 @@
 module day_5
 open System.IO
 
-let input = File.ReadAllLines "day_5/input.txt" 
+let input = File.ReadAllLines "day_5/bigboi.txt" 
 
 type Vec = int * int
 type VecList = array<(Vec * Vec)>
@@ -52,18 +52,23 @@ let make_matrix (list: VecList) =
 
 let mark_matrix (matrix: Matrix) (col_row: int * int) =
     let (col, row) = col_row
+    let mutable matrix2 = matrix
+    let elem =matrix.[row].[col]
+    matrix2.[row].[col] <- elem + 1
 
-    matrix |> Array.mapi (fun col_idx rw ->
-        if col_idx = col then
-            rw |> Array.mapi (fun row_idx elem -> 
-                if row_idx = row then
-                    elem + 1
-                else
-                    elem
-            )
-        else 
-            rw
-    )
+    matrix2
+
+    // matrix |> Array.mapi (fun col_idx rw ->
+    //     if col_idx = col then
+    //         rw |> Array.mapi (fun row_idx elem -> 
+    //             if row_idx = row then
+    //                 elem + 1
+    //             else
+    //                 elem
+    //         )
+    //     else 
+    //         rw
+    // )
     
 
 let calculate_crossings (matrix: Matrix) = 
