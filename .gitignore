@@ -13,5 +13,5 @@ bin
 *.exe
 !.paket/paket.bootstrapper.exe
 .ionide/
-
+symbolCache.db
 # End of https://www.toptal.com/developers/gitignore/api/fsharp

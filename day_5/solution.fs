@@ -53,23 +53,12 @@ let make_matrix (list: VecList) =
 let mark_matrix (matrix: Matrix) (col_row: int * int) =
     let (col, row) = col_row
     let mutable matrix2 = matrix
+    // TODO use [Array.set](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html#set)
+    // to drop mutable stuff
     let elem =matrix.[row].[col]
     matrix2.[row].[col] <- elem + 1
 
     matrix2
-
-    // matrix |> Array.mapi (fun col_idx rw ->
-    //     if col_idx = col then
-    //         rw |> Array.mapi (fun row_idx elem -> 
-    //             if row_idx = row then
-    //                 elem + 1
-    //             else
-    //                 elem
-    //         )
-    //     else 
-    //         rw
-    // )
-    
 
 let calculate_crossings (matrix: Matrix) = 
     (0, matrix) ||> Array.fold (fun count row ->
