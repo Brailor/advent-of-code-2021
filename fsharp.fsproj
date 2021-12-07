@@ -5,6 +5,7 @@
     <WarnOn>3390;$(WarnOn)</WarnOn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="day_7/solution.fs" />
     <Compile Include="day_6/solution.fs" />
     <Compile Include="day_5/solution.fs" />
     <Compile Include="day_2/solution.fs" />
@@ -12,5 +13,8 @@
     <Compile Include="day_3/solution.fs" />
     <Compile Include="day_4/solution.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Stats" Version="0.4.2" />
   </ItemGroup>
 </Project>

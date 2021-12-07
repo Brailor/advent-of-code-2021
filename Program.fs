@@ -16,6 +16,6 @@ let main argv =
 
     // printfn "day - 2: \n problem - 1: %A \n problem - 2: %A" d21 d22
 
-    let a = day_6.problem1
+    let a = day_7.problem1
 
     0 // return an integer exit code
