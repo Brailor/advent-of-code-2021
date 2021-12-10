@@ -5,6 +5,9 @@
     <WarnOn>3390;$(WarnOn)</WarnOn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="day_10/solution.fs" />
+    <Compile Include="day_9/solution.fs" />
+    <Compile Include="day_8/solution.fs" />
     <Compile Include="day_7/solution.fs" />
     <Compile Include="day_6/solution.fs" />
     <Compile Include="day_5/solution.fs" />
