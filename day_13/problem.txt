@@ -1,0 +1,35 @@
+folding along y=3
+
+# . #
+. . .
+. . .
+- - -
+# # #
+. . #
+. # .
+
+would result in:
+= = =
+
+# # #
+. . #
+# # #
+
+
+rotate the 2. matrix by 180deg
+then merge the 2 matricies together to get the result
+
+----------
+rotate a matrix by 180
+(x,y) = (col,row)
+
+(0,0) (1,0) (2,0)      -->     (0,2) (1,2) (2,2)
+(0,1) (1,1) (2,1)      -->     (0,1) (1,1) (2,1)
+(0,2) (1,2) (2,2)      -->     (0,0) (1,0) (2,2)
+
+-----------
+
+. # # #         . . . #
+. # . #         . . . .
+. . . .         . # . #
+. . . #         . # # #

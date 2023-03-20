@@ -8,7 +8,7 @@
       "command": "dotnet",
       "type": "shell",
       "options": {
-        "cwd": "${workspaceFolder}/fsharp"
+        "cwd": "${workspaceFolder}"
       },
       "args": [
         "build",

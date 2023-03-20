@@ -9,9 +9,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/fsharp/bin/Debug/net5.0/fsharp.dll",
+      "program": "${workspaceFolder}/bin/Debug/net5.0/fsharp.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/fsharp",
+      "cwd": "${workspaceFolder}",
       "stopAtEntry": false,
       "console": "internalConsole"
     }
